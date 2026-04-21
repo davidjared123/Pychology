@@ -1,6 +1,26 @@
+:root {
+    /* Paleta solicitada */
+    --color-pink-strong: #FABBCC;
+    /* Rosa fuerte (Reemplaza los botones naranjas) */
+    --color-pink-soft: #FBCCCC;
+    /* Rosa suave (Para detalles secundarios/iconos) */
+    --color-peach: #FDDECE;
+    /* Durazno claro (Acentos y figuras decorativas) */
+    --color-beige: #FDEECC;
+    /* Beige original */
+
+    /* Fondo extra claro */
+    --color-bg-light: #FEF7F8;
+    /* Un tono casi blanco, apenas rosado para que sea muy luminoso */
+
+    /* Variables adicionales para complementar */
+    --color-dark-text: #4A3C3C;
+    /* Un tono oscuro cálido (marrón oscuro) en lugar del azul marino para que combine */
+}
+
 /*primary color*/
 .bg-cream {
-    background-color: #FFF2E1;
+    background-color: var(--color-bg-light) !important;
 }
 
 /*font*/
@@ -8,34 +28,103 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Sobrescribiendo clases de Tailwind usadas en la plantilla para adaptarlas a la nueva paleta */
 .bg-yellow-500 {
-    background-color: #F48C06;
+    background-color: var(--color-pink-strong) !important;
 }
+
 .text-yellow-500 {
-    color: #F48C06;
+    color: var(--color-pink-strong) !important;
 }
-.floating { 
-    animation-name: floating; 
-    animation-duration: 3s; 
-    animation-iteration-count: infinite; 
-    animation-timing-function: ease-in-out;
-} 
-@keyframes floating { 
-    0% { transform: translate(0, 0px); } 
-    50% { transform: translate(0, 8px); } 
-    100% { transform: translate(0, -0px); }  
-} 
-.floating-4 { 
-    animation-name: floating; 
-    animation-duration: 4s; 
-    animation-iteration-count: infinite; 
-    animation-timing-function: ease-in-out;
-} 
-@keyframes floating-4 { 
-    0% { transform: translate(0, 0px); } 
-    50% { transform: translate(0, 8px); } 
-    100% { transform: translate(0, -0px); }  
+
+.border-yellow-500 {
+    border-color: var(--color-pink-strong) !important;
 }
+
+.bg-yellow-300 {
+    background-color: var(--color-peach) !important;
+}
+
 .text-darken {
-    color: #2F327D;
+    color: var(--color-dark-text) !important;
+}
+
+/* Sobrescribiendo colores quemados en los SVGs alineándolos a tu paleta (para que los iconos y decoraciones también cambien de color) */
+svg [fill="#F48C06"] {
+    fill: var(--color-pink-strong) !important;
+}
+
+svg [fill="#2F327D"] {
+    fill: var(--color-dark-text) !important;
+}
+
+svg [fill="#23BDEE"],
+svg [fill="#65DAFF"],
+svg [fill="#33D9EF"],
+svg [fill="#5B72EE"] {
+    fill: var(--color-pink-soft) !important;
+}
+
+path[stroke="#F25471"],
+path[stroke="#F48C06"] {
+    stroke: var(--color-pink-strong) !important;
+}
+
+svg [fill="#F3627C"] {
+    fill: var(--color-peach) !important;
+}
+
+svg [fill="#33EFA0"] {
+    fill: var(--color-peach) !important;
+}
+
+svg [fill="#5B61EB"] {
+    fill: var(--color-pink-soft) !important;
+}
+
+svg [fill="#F56666"] {
+    fill: var(--color-pink-strong) !important;
+}
+
+/* Efectos flotantes */
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 8px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+.floating-4 {
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-4 {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 8px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
 }
