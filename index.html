@@ -29,6 +29,14 @@
 		spline-viewer {
 			background: transparent !important;
 		}
+
+		/* Texto tarjetas flotantes hero */
+		.card-title { font-size: 8px; }
+		.card-sub   { font-size: 7px; }
+		@media (min-width: 640px) {
+			.card-title { font-size: 10px; }
+			.card-sub   { font-size: 9px; }
+		}
 	</style>
 
 </head>
@@ -92,25 +100,28 @@
 					class="my-4 text-4xl md:text-5xl font-bold leading-tight text-darken mt-10 md:mt-0">
 					Hola soy<span class="text-yellow-500"> Angélica</span>
 				</h1>
-				<p data-aos="fade-down" data-aos-once="true" data-aos-delay="300" class="leading-normal text-lg md:text-2xl mb-8">
+				<p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
+					class="leading-normal text-lg md:text-2xl mb-8">
 					Caminemos juntos hacia una versión más saludable de ti mismo.</p>
 				<div data-aos="fade-up" data-aos-once="true" data-aos-delay="700"
 					class="w-full flex flex-col md:flex-row items-center justify-center lg:justify-start md:space-x-5">
 					<button
-						class="w-full md:w-auto lg:mx-0 bg-yellow-500 text-white text-lg md:text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
+						class="w-full md:w-auto lg:mx-0 bg-yellow-500 text-white text-sm md:text-base font-bold rounded-full py-3 px-7 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
 						Unirme a la comunidad
 					</button>
 					<div
-						class="flex items-center justify-center space-x-3 mt-5 md:mt-0 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
-						<button class="bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-md">
-							<svg class="w-5 h-5 ml-1" viewBox="0 0 24 28" fill="none"
+						class="flex items-center justify-center space-x-2 mt-4 md:mt-0 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
+						<button
+							class="bg-white w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-md flex-shrink-0">
+							<svg class="w-4 h-4 ml-1 md:w-5 md:h-5" viewBox="0 0 24 28" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path
 									d="M22.5751 12.8097C23.2212 13.1983 23.2212 14.135 22.5751 14.5236L1.51538 27.1891C0.848878 27.5899 5.91205e-07 27.1099 6.25202e-07 26.3321L1.73245e-06 1.00123C1.76645e-06 0.223477 0.848877 -0.256572 1.51538 0.14427L22.5751 12.8097Z"
 									fill="#23BDEE" />
 							</svg>
 						</button>
-						<span class="cursor-pointer text-gray-700 font-medium">Próximos Webinars</span>
+						<span class="cursor-pointer text-gray-700 text-sm md:text-base font-medium">Próximos
+							Webinars</span>
 					</div>
 				</div>
 			</div>
@@ -121,52 +132,52 @@
 					src="img/angelica.png" alt="Angélica" />
 				<!-- Tarjeta Azul / Grupo Apoyo -->
 				<div data-aos="fade-up" data-aos-delay="300" data-aos-once="true"
-					class="absolute top-24 -left-6 sm:top-32 sm:left-10 md:top-40 md:left-16 lg:-left-12 lg:top-48 floating-4 bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm shadow-xl rounded-xl p-4 max-w-[16rem] flex items-center space-x-3 border-l-4"
+					class="absolute top-24 -left-4 sm:top-32 sm:left-10 md:top-40 md:left-16 lg:-left-12 lg:top-48 floating-4 bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm shadow-lg rounded-lg sm:rounded-xl p-1.5 sm:p-4 max-w-[9rem] sm:max-w-[16rem] flex items-center space-x-1.5 sm:space-x-3 border-l-2 sm:border-l-4"
 					style="border-color: var(--color-pink-strong);">
-					<div class="p-2 rounded-full text-white flex-shrink-0"
+					<div class="p-1 sm:p-2 rounded-full text-white flex-shrink-0"
 						style="background-color: var(--color-pink-strong);">
-						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<svg class="w-3 h-3 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 								d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
 							</path>
 						</svg>
 					</div>
 					<div>
-						<p class="text-xs font-semibold leading-tight text-gray-800">Próximo Grupo de Apoyo</p>
-						<p class="text-xs text-gray-500 mt-1">Ansiedad y Calma <br /> • 15 Nov</p>
+						<p class="card-title font-semibold leading-tight text-gray-800">Próximo Grupo de Apoyo</p>
+						<p class="card-sub text-gray-500 mt-0.5">Ansiedad y Calma <br /> • 15 Nov</p>
 					</div>
 				</div>
 				<!-- Tarjeta Inferior / Testimonio -->
 				<div data-aos="fade-up" data-aos-delay="500" data-aos-once="true"
-					class="absolute bottom-16 -left-4 sm:left-2 sm:bottom-20 lg:bottom-28 lg:-left-16 floating bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm shadow-xl rounded-xl p-4 max-w-[20rem] flex items-start space-x-3 border-l-4"
+					class="absolute bottom-16 -left-3 sm:left-2 sm:bottom-20 lg:bottom-28 lg:-left-16 floating bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm shadow-lg rounded-lg sm:rounded-xl p-1.5 sm:p-4 max-w-[10rem] sm:max-w-[20rem] flex items-start space-x-1.5 sm:space-x-3 border-l-2 sm:border-l-4"
 					style="border-color: var(--color-pink-soft);">
-					<div class="flex-shrink-0 mt-1">
+					<div class="flex-shrink-0 mt-0.5 sm:mt-1">
 						<div
-							class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-400 overflow-hidden">
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+							class="w-5 h-5 sm:w-8 sm:h-8 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-400 overflow-hidden">
+							<svg class="w-3 h-3 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
 								<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
 									clip-rule="evenodd"></path>
 							</svg>
 						</div>
 					</div>
 					<div>
-						<p class="text-xs text-gray-600 italic">"Entender la ansiedad <br />
-							cambió mi vida. <br /> ¡Gracias, Angélica!"</p>
+						<p class="card-title text-gray-600 italic">"¿Por qué no lo conocí antes? <br />
+							Cambió mi vida. <br /> ¡Gracias, Angélica!"</p>
 					</div>
 				</div>
 				<!-- Tarjeta Derecha / Confirmacion -->
 				<div data-aos="fade-up" data-aos-delay="600" data-aos-once="true"
-					class="absolute bottom-32 md:bottom-48 lg:bottom-56 -right-6 lg:-right-4 floating-4 bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm shadow-xl rounded-xl p-3 max-w-[14rem] flex items-center space-x-3 border-l-4"
+					class="absolute bottom-32 md:bottom-48 lg:bottom-56 -right-4 lg:-right-4 floating-4 bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm shadow-lg rounded-lg sm:rounded-xl p-1.5 sm:p-3 max-w-[8rem] sm:max-w-[14rem] flex items-center space-x-1.5 sm:space-x-3 border-l-2 sm:border-l-4"
 					style="border-color: var(--color-peach);">
-					<div class="bg-green-100 p-2 rounded-full text-green-500 flex-shrink-0">
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="bg-green-100 p-1 sm:p-2 rounded-full text-green-500 flex-shrink-0">
+						<svg class="w-3 h-3 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
 							</path>
 						</svg>
 					</div>
 					<div>
-						<p class="text-xs font-semibold text-gray-800 leading-tight">Inscripción exitosa</p>
-						<p class="text-[10px] text-gray-500">al Webinar</p>
+						<p class="card-title font-semibold text-gray-800 leading-tight">Inscripción exitosa</p>
+						<p class="card-sub text-gray-500">al Webinar</p>
 					</div>
 				</div>
 			</div>
@@ -186,7 +197,8 @@
 
 		<!-- Temas que trataremos -->
 		<div class="max-w-4xl mx-auto mt-20">
-			<h1 class="text-center mb-6 text-gray-400 tracking-widest text-sm uppercase font-semibold">Temas que trataremos</h1>
+			<h1 class="text-center mb-6 text-gray-400 tracking-widest text-sm uppercase font-semibold">Temas que
+				trataremos</h1>
 			<div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-gray-600 font-medium text-sm sm:text-lg">
 				<span>Ansiedad</span><span class="text-yellow-500">•</span>
 				<span>Depresión</span><span class="text-yellow-500">•</span>
@@ -212,7 +224,8 @@
 					</svg>
 				</div>
 				<h1 class="font-medium text-xl mb-3 lg:px-6 text-darken">Webinars Mensuales</h1>
-				<p class="px-4 text-sm text-gray-500">Sesiones en vivo donde exploramos las raíces de la ansiedad y la depresión de forma clara.</p>
+				<p class="px-4 text-sm text-gray-500">Sesiones en vivo donde exploramos las raíces de la ansiedad y la
+					depresión de forma clara.</p>
 			</div>
 			<div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-xl p-6 text-center rounded-xl">
 				<div style="background: linear-gradient(135deg, var(--color-peach), var(--color-pink-strong)); box-shadow: inset 0 2px 6px rgba(255,255,255,0.6), 0 8px 15px rgba(0,0,0,0.1);"
@@ -257,7 +270,8 @@
 					</svg>
 				</div>
 				<h1 class="font-medium text-xl mb-3 lg:px-6 text-darken">Grupos de Apoyo</h1>
-				<p class="px-4 text-sm text-gray-500">Espacios seguros y guiados para compartir experiencias y sentirte comprendido.</p>
+				<p class="px-4 text-sm text-gray-500">Espacios seguros y guiados para compartir experiencias y sentirte
+					comprendido.</p>
 			</div>
 			<div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-xl p-6 text-center rounded-xl">
 				<div style="background: linear-gradient(135deg, white, var(--color-pink-soft)); box-shadow: inset 0 2px 6px rgba(255,255,255,0.8), 0 8px 15px rgba(0,0,0,0.1);"
@@ -269,7 +283,8 @@
 					</svg>
 				</div>
 				<h1 class="font-medium text-xl mb-3 lg:px-6 text-darken lg:h-14 pt-3">Recursos Prácticos</h1>
-				<p class="px-4 text-sm text-gray-500">Guías, ejercicios y material descargable para aplicar en tu día a día.</p>
+				<p class="px-4 text-sm text-gray-500">Guías, ejercicios y material descargable para aplicar en tu día a
+					día.</p>
 			</div>
 		</div>
 
@@ -277,7 +292,8 @@
 		<div class="mt-28">
 			<div data-aos="flip-down" class="text-center max-w-screen-md mx-auto">
 				<h1 class="text-3xl font-bold mb-4">¿Qué es este <span class="text-yellow-500">espacio?</span></h1>
-				<p class="text-gray-500">No es terapia clínica, es un puente hacia tu bienestar. Aquí aprendemos a entender nuestra mente para dejar de pelear con lo que sentimos.</p>
+				<p class="text-gray-500">No es terapia clínica, es un puente hacia tu bienestar. Aquí aprendemos a
+					entender nuestra mente para dejar de pelear con lo que sentimos.</p>
 			</div>
 			<div data-aos="fade-up"
 				class="flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7">
@@ -286,7 +302,8 @@
 					<div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
 						<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
 							<button
-								class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">Ver Próximos Talleres</button>
+								class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">Ver
+								Próximos Talleres</button>
 						</div>
 					</div>
 				</div>
@@ -295,7 +312,8 @@
 					<div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
 						<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
 							<button
-								class="bg-yellow-500 rounded-full text-white text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">Únete a la Comunidad</button>
+								class="bg-yellow-500 rounded-full text-white text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">Únete
+								a la Comunidad</button>
 						</div>
 					</div>
 				</div>
@@ -305,8 +323,10 @@
 		<div class="sm:flex items-center sm:space-x-8 mt-36">
 			<div data-aos="fade-right" class="sm:w-1/2 relative">
 				<div class="bg-yellow-500 rounded-full absolute w-12 h-12 z-0 -left-4 -top-3 animate-pulse"></div>
-				<h1 class="font-semibold text-2xl relative z-50 text-darken lg:pr-10">Herramientas para tu <span class="text-yellow-500">crecimiento mental</span></h1>
-				<p class="py-5 lg:pr-32">A través de la psicoeducación, transformamos la confusión en claridad. Entender los procesos de tu cerebro es el primer paso para sanar.</p>
+				<h1 class="font-semibold text-2xl relative z-50 text-darken lg:pr-10">Herramientas para tu <span
+						class="text-yellow-500">crecimiento mental</span></h1>
+				<p class="py-5 lg:pr-32">A través de la psicoeducación, transformamos la confusión en claridad. Entender
+					los procesos de tu cerebro es el primer paso para sanar.</p>
 				<a href="" class="underline">Quiero aprender más</a>
 			</div>
 			<div data-aos="fade-left" class="sm:w-1/2 relative mt-10 sm:mt-0">
@@ -338,22 +358,33 @@
 					class="w-5 h-5 rounded-full absolute z-0 right-52 bottom-1 animate-ping"></div>
 			</div>
 			<div data-aos="fade-down" class="md:w-5/12 mt-20 md:mt-0 text-gray-500">
-				<h1 class="text-2xl font-semibold text-darken lg:pr-40">Nuestros <span class="text-yellow-500">Círculos de Apoyo</span></h1>
+				<h1 class="text-2xl font-semibold text-darken lg:pr-40">Nuestros <span class="text-yellow-500">Círculos
+						de Apoyo</span></h1>
 				<div class="flex items-center space-x-5 my-5">
 					<div class="flex-shrink bg-white shadow-lg rounded-full p-3 flex items-center justify-center">
-						<svg class="w-4 h-4 text-pink-strong" viewBox="0 0 24 24" fill="none" stroke="#FABBCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+						<svg class="w-4 h-4 text-pink-strong" viewBox="0 0 24 24" fill="none" stroke="#FABBCC"
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+						</svg>
 					</div>
 					<p>Escucha activa y sin juicios.</p>
 				</div>
 				<div class="flex items-center space-x-5 my-5">
 					<div class="flex-shrink bg-white shadow-lg rounded-full p-3 flex items-center justify-center">
-						<svg class="w-4 h-4 text-pink-strong" viewBox="0 0 24 24" fill="none" stroke="#FABBCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+						<svg class="w-4 h-4 text-pink-strong" viewBox="0 0 24 24" fill="none" stroke="#FABBCC"
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+						</svg>
 					</div>
 					<p>Moderado por profesionales en formación.</p>
 				</div>
 				<div class="flex items-center space-x-5 my-5">
 					<div class="flex-shrink bg-white shadow-lg rounded-full p-3 flex items-center justify-center">
-						<svg class="w-4 h-4 text-pink-strong" viewBox="0 0 24 24" fill="none" stroke="#FABBCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 8v8"/></svg>
+						<svg class="w-4 h-4 text-pink-strong" viewBox="0 0 24 24" fill="none" stroke="#FABBCC"
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="10" />
+							<path d="M16 12l-4-4-4 4M12 8v8" />
+						</svg>
 					</div>
 					<p>Conexión con personas que viven procesos similares a los tuyos.</p>
 				</div>
@@ -363,8 +394,10 @@
 		<!-- Tools For Teachers And Learners -->
 		<div class="flex flex-col md:flex-row items-center md:space-x-10 mt-16">
 			<div data-aos="fade-right" class="md:w-1/2 lg:pl-14">
-				<h1 class="text-darken font-semibold text-3xl lg:pr-56">Tu Caja de <span class="text-yellow-500">Herramientas Emocionales</span></h1>
-				<p class="text-gray-500 my-4 lg:pr-32">Diseñadas para que gestiones momentos de crisis, pensamientos intrusivos y recuperes tu centro cuando más lo necesites.</p>
+				<h1 class="text-darken font-semibold text-3xl lg:pr-56">Tu Caja de <span
+						class="text-yellow-500">Herramientas Emocionales</span></h1>
+				<p class="text-gray-500 my-4 lg:pr-32">Diseñadas para que gestiones momentos de crisis, pensamientos
+					intrusivos y recuperes tu centro cuando más lo necesites.</p>
 			</div>
 			<img data-aos="fade-left" class="md:w-1/2" src="img/girl-with-books.png">
 		</div>
@@ -379,7 +412,8 @@
 					<h1 class="text-gray-400 tracking-widest text-sm">TESTIMONIO</h1>
 				</div>
 				<h1 class="font-semibold text-darken text-2xl lg:pr-40">Voces de la comunidad</h1>
-				<p class="text-gray-500 my-5 lg:pr-36">"Entender mi ansiedad desde la ciencia me quitó un peso de encima. Angélica explica todo con una calidez única."</p>
+				<p class="text-gray-500 my-5 lg:pr-36">"Entender mi ansiedad desde la ciencia me quitó un peso de
+					encima. Angélica explica todo con una calidez única."</p>
 				<button
 					class="flex items-center space-x-3 pl-3 border-b border-l border-t border-yellow-500 text-yellow-500 font-medium my-4 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full">
 					<span>Leer más historias</span>
@@ -406,26 +440,37 @@
 	<div class="bg-white py-20 border-t border-gray-100 mt-10">
 		<div class="max-w-2xl mx-auto px-6 text-center">
 			<h2 class="text-3xl font-bold text-darken mb-3">Únete a nuestra comunidad</h2>
-			<p class="text-gray-500 mb-8 max-w-md mx-auto">Recibe reflexiones semanales, herramientas prácticas y novedades antes que nadie. Gratis y sin spam directo a tu bandeja.</p>
-			
+			<p class="text-gray-500 mb-8 max-w-md mx-auto">Recibe reflexiones semanales, herramientas prácticas y
+				novedades antes que nadie. Gratis y sin spam directo a tu bandeja.</p>
+
 			<div class="w-full relative">
 				<div class="ml-form-align-center">
 					<div class="ml-form-embedWrapper embedForm">
 						<div class="custom-row-form">
 							<div class="flex flex-col md:flex-row gap-4 justify-center">
 								<div class="w-full md:w-1/3">
-									<input type="text" class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm" name="fields[name]" placeholder="Tu Nombre">
+									<input type="text"
+										class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm"
+										name="fields[name]" placeholder="Tu Nombre">
 								</div>
 								<div class="w-full md:w-1/2">
-									<input type="email" class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm" name="fields[email]" placeholder="Tu Correo Electrónico" autocomplete="email" required>
+									<input type="email"
+										class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm"
+										name="fields[email]" placeholder="Tu Correo Electrónico" autocomplete="email"
+										required>
 								</div>
-								<button type="button" onclick="submitMailerlite(this)" class="bg-gradient-to-r from-pink-400 to-yellow-300 text-white font-bold py-3 px-8 rounded-2xl shadow-lg hover:scale-105 transition-all transform w-full md:w-auto">Unirme</button>
+								<button type="button" onclick="submitMailerlite(this)"
+									class="bg-gradient-to-r from-pink-400 to-yellow-300 text-white font-bold py-3 px-8 rounded-2xl shadow-lg hover:scale-105 transition-all transform w-full md:w-auto">Unirme</button>
 							</div>
 						</div>
 						<div class="custom-row-success" style="display:none">
 							<div class="flex flex-col items-center justify-center p-4">
-								<div class="h-16 w-16 bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500 shadow-sm">
-									<svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+								<div
+									class="h-16 w-16 bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500 shadow-sm">
+									<svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											d="M5 13l4 4L19 7" />
+									</svg>
 								</div>
 								<h3 class="text-2xl font-bold text-darken mb-2">¡Listo!</h3>
 								<p class="text-gray-500">¡Te hemos enviado el acceso a tu correo!</p>
@@ -440,13 +485,15 @@
 	<footer class="mt-16" style="background-color: var(--color-bg-light);">
 		<div class="max-w-lg mx-auto">
 			<div class="flex flex-col items-center py-12 justify-center text-darken px-8">
-				<h1 class="font-bold text-2xl relative z-50 mb-3 text-center" style="color: var(--color-pink-strong);">Angélica Martinez</h1>
+				<h1 class="font-bold text-2xl relative z-50 mb-3 text-center" style="color: var(--color-pink-strong);">
+					Angélica Martinez</h1>
 				<span class="text-sm font-medium text-center opacity-80">Psicóloga Clínica & Psicoterapeuta</span>
 			</div>
 			<div class="flex items-center text-darken opacity-80 text-sm justify-center mb-8">
 				<a href="webinars.html" class="px-3 hover:opacity-100 transition">Webinars</a>
 				<a href="" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Términos</a>
-				<a href="" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Políticas de Privacidad</a>
+				<a href="" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Políticas de
+					Privacidad</a>
 			</div>
 			<div class="text-center text-darken border-t border-gray-300 py-6">
 				<p class="opacity-80 text-sm">&copy; 2026 Angélica Martinez. Todos los derechos reservados.</p>
@@ -460,8 +507,8 @@
 			const container = btn.closest('.custom-row-form') || btn.closest('.custom-modal-form');
 			const nameInput = container.querySelector('input[name="fields[name]"]');
 			const emailInput = container.querySelector('input[name="fields[email]"]');
-			
-			if(!emailInput.value || !emailInput.value.includes('@')) {
+
+			if (!emailInput.value || !emailInput.value.includes('@')) {
 				emailInput.focus();
 				alert('Por favor ingresa un correo electrónico válido.');
 				return;
