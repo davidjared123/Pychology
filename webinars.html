@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Webinars - Angélica Martinez</title>
+	<!-- Tailwind -->
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<!-- Alpine -->
+	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+	<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+	<!-- AOS -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<!-- Custom style -->
+	<link rel="stylesheet" href="css/skilline.css" />
+	<!-- Poppins font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="antialiased bg-white"
+	x-data="{ webinarModalOpen: false, showSuccess: false, submitSuscripcion() { this.showSuccess = true; setTimeout(() => { this.webinarModalOpen = false; this.showSuccess = false; }, 3500); } }">
+	<!-- navbar -->
+	<div x-data="{ open: false }" class="w-full text-gray-700 bg-cream">
+		<div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
+			<div class="flex flex-row items-center justify-between py-6">
+				<div class="relative md:mt-8">
+					<a href="index.html"
+						class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">Angélica</a>
+					<svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z"
+							fill="#65DAFF" />
+					</svg>
+				</div>
+				<button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+					<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+						<path x-show="!open" fill-rule="evenodd"
+							d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+							clip-rule="evenodd"></path>
+						<path x-show="open" fill-rule="evenodd"
+							d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>
+			<nav :class="{ 'transform md:transform-none': !open, 'h-full': open }"
+				class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0">
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="index.html">Inicio</a>
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 font-bold text-yellow-500 focus:outline-none focus:shadow-outline"
+					href="webinars.html">Webinars</a>
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="about.html">Sobre Mí</a>
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="blog.html">Blog</a>
+				<a class="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4"
+					href="#">Iniciar Sesión</a>
+				<a class="px-10 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4"
+					href="#">Registrarse</a>
+			</nav>
+		</div>
+	</div>
+
+	<!-- Hero Header -->
+	<div class="bg-cream pt-16 pb-12 overflow-hidden relative">
+		<div class="container mx-auto px-4 lg:px-8 max-w-5xl z-10 relative text-center">
+			<h1 data-aos="fade-down" class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-darken mb-6">
+				Aprende y Conecta: <br /><span style="color: var(--color-pink-strong);">Nuestros Próximos
+					Webinars</span>
+			</h1>
+			<p data-aos="fade-up" data-aos-delay="200"
+				class="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
+				Espacios gratuitos de psicoeducación para entender la mente, la ansiedad y construir una vida en
+				equilibrio.
+			</p>
+		</div>
+		<!-- Simple curve -->
+		<div class="absolute bottom-0 w-full overflow-hidden leading-none opacity-50 text-white">
+			<svg class="relative block w-full h-12 md:h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 1200 120" preserveAspectRatio="none">
+				<path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+					fill="currentColor"></path>
+			</svg>
+		</div>
+	</div>
+
+	<!-- Grilla de Eventos -->
+	<div class="container mx-auto px-4 lg:px-8 py-20 max-w-6xl">
+		<h2 data-aos="fade-right" class="text-3xl font-bold text-darken mb-10 border-b-4 inline-block pb-2"
+			style="border-color: var(--color-peach);">
+			Sesiones Disponibles
+		</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<!-- Tarjeta Webinar 1 -->
+			<div data-aos="fade-up" data-aos-delay="100"
+				class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-blue-50 flex flex-col">
+				<div class="p-8 flex-grow">
+					<span class="inline-block px-4 py-1 rounded-full text-xs font-bold mb-4"
+						style="background-color: var(--color-bg-light); color: var(--color-pink-strong);">🧠
+						Ansiedad</span>
+					<h3 class="text-2xl font-bold text-gray-800 mb-3 leading-snug">Cómo identificar y transitar tus
+						crisis de ansiedad sin miedo</h3>
+					<div class="flex items-center text-sm text-yellow-600 font-bold mb-4">
+						<svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+							</path>
+						</svg>
+						Jueves, 25 de Octubre • 18:00 (Hora Local)
+					</div>
+					<p class="text-gray-500 text-sm mb-6">Descubre por qué ocurren los ataques de pánico y aprende
+						herramientas inmediatas de neuro-regulación para volver a tu centro.</p>
+				</div>
+				<div class="px-8 pb-8 mt-auto">
+					<button onclick="openWebinarModal('Cómo identificar y transitar tus crisis de ansiedad sin miedo', '185483906367095970')" class="w-full text-white font-bold py-3 px-4 rounded-full shadow-lg transform transition-all hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
+						Reservar mi lugar
+					</button>
+				</div>
+			</div>
+
+			<!-- Tarjeta Webinar 2 -->
+			<div data-aos="fade-up" data-aos-delay="200"
+				class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-blue-50 flex flex-col">
+				<div class="p-8 flex-grow">
+					<span
+						class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-xs font-bold mb-4">🌱
+						Depresión y Autocuidado</span>
+					<h3 class="text-2xl font-bold text-gray-800 mb-3 leading-snug">Pequeños pasos para salir de los
+						episodios depresivos</h3>
+					<div class="flex items-center text-sm text-yellow-600 font-bold mb-4">
+						<svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+							</path>
+						</svg>
+						Martes, 30 de Octubre • 19:30 (Hora Local)
+					</div>
+					<p class="text-gray-500 text-sm mb-6">La depresión roba tu energía vital. En esta sesión mapearemos
+						un plan de rutinas minimalistas y compasión propia para reactivarte.</p>
+				</div>
+				<div class="px-8 pb-8 mt-auto">
+					<button onclick="openWebinarModal('Pequeños pasos para salir de los episodios depresivos', '185483949069304878')" class="w-full text-white font-bold py-3 px-4 rounded-full shadow-lg transform transition-all hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
+						Reservar mi lugar
+					</button>
+				</div>
+			</div>
+
+			<!-- Tarjeta Webinar 3 -->
+			<div data-aos="fade-up" data-aos-delay="300"
+				class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-blue-50 flex flex-col">
+				<div class="p-8 flex-grow">
+					<span
+						class="inline-block bg-yellow-100 text-yellow-600 px-4 py-1 rounded-full text-xs font-bold mb-4">👶
+						Crianza y Emociones</span>
+					<h3 class="text-2xl font-bold text-gray-800 mb-3 leading-snug">Cómo ser un refugio seguro para tus
+						hijos sin perder la paciencia</h3>
+					<div class="flex items-center text-sm text-yellow-600 font-bold mb-4">
+						<svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+							</path>
+						</svg>
+						Sábado, 03 de Noviembre • 10:00 (Hora Local)
+					</div>
+					<p class="text-gray-500 text-sm mb-6">Herramientas prácticas de psicología infantil para validar las
+						emociones de los más pequeños y conectar antes de corregir.</p>
+				</div>
+				<div class="px-8 pb-8 mt-auto">
+					<button onclick="openWebinarModal('Cómo ser un refugio seguro para tus hijos sin perder la paciencia', '185483983489861443')" class="w-full text-white font-bold py-3 px-4 rounded-full shadow-lg transform transition-all hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
+						Reservar mi lugar
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Custom 100% Tailwind conectado a MailerLite -->
+	<div id="webinar-modal" class="fixed inset-0 z-50 overflow-y-auto" style="display: none;" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+		<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+			<!-- Background overlay -->
+			<div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity cursor-pointer" onclick="closeWebinarModal()" aria-hidden="true"></div>
+
+			<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+			
+			<!-- Modal panel -->
+			<div class="inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full relative z-10">
+				
+				<div class="custom-modal-form bg-white">
+					<!-- Cerrar X -->
+					<button onclick="closeWebinarModal()" class="absolute top-4 right-4 bg-gray-100 rounded-full p-2 text-gray-500 hover:text-gray-800 transition z-50 focus:outline-none">
+						<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+					</button>
+
+					<div class="p-8">
+						<div class="text-center mb-6">
+							<div class="inline-block p-4 rounded-full mb-4 bg-pink-50">
+								<svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+							</div>
+							<h3 class="text-2xl leading-6 font-bold text-gray-900" id="modal-title">Asegura tu lugar</h3>
+							<p class="mt-2 text-sm text-gray-500 mb-2">Estás a punto de inscribirte al webinar:</p>
+							<p id="modal-webinar-title" class="text-md font-semibold text-pink-500 italic px-2">...</p>
+						</div>
+						
+						<div class="space-y-4">
+							<div>
+								<label class="block text-sm font-medium text-gray-700 mb-1">Nombre (o apodo)</label>
+								<input id="modal-name" type="text" class="block w-full border-gray-300 rounded-2xl bg-gray-50 px-4 py-3 focus:ring-pink-300 focus:border-pink-300 sm:text-sm shadow-inner outline-none transition border border-gray-100" placeholder="Angélica">
+							</div>
+							<div>
+								<label class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+								<input id="modal-email" type="email" class="block w-full border-gray-300 rounded-2xl bg-gray-50 px-4 py-3 focus:ring-pink-300 focus:border-pink-300 sm:text-sm shadow-inner outline-none transition border border-gray-100" placeholder="tu@correo.com">
+							</div>
+							<div class="pt-4">
+								<button type="button" onclick="submitWebinarModal(this)" class="w-full flex justify-center py-4 border border-transparent rounded-full shadow-lg text-lg font-bold text-white focus:outline-none transform transition hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
+									Inscribirme al Webinar
+								</button>
+								<p class="text-xs text-center text-gray-400 mt-3 flex items-center justify-center">
+									<svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+									Tus datos están protegidos y nunca enviaremos spam.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Vista de Éxito Tailwind -->
+				<div class="custom-modal-success p-10 text-center relative" style="display: none;">
+					<div class="absolute inset-0 w-full h-full pointer-events-none flex justify-center items-center overflow-hidden z-10">
+						<span class="animate-ping absolute inline-flex h-24 w-24 rounded-full bg-yellow-400 opacity-20"></span>
+					</div>
+					<div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 relative z-20 mb-6 transition-all transform scale-110">
+						<svg class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+					</div>
+					<h3 class="text-3xl font-bold text-gray-900 mb-2 relative z-20 text-pink-500">¡Inscripción Exitosa!</h3>
+					<p class="text-gray-600 text-lg relative z-20 mb-6">Revisa tu correo, te enviamos el enlace de acceso y todos los detalles para conectarte.</p>
+					<button onclick="closeWebinarModal()" class="relative z-20 w-full flex justify-center py-3 border border-gray-200 rounded-full text-md font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none transition">
+						Cerrar ventana
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Sesiones Anteriores (Cursos / Clases) -->
+	<div class="bg-gray-50 py-20 mt-10">
+		<div class="container mx-auto px-4 lg:px-8 max-w-6xl">
+			<h2 data-aos="fade-right" class="text-2xl md:text-3xl font-bold text-darken mb-4 flex items-center">
+				<svg class="w-8 h-8 mr-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+					<path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path>
+				</svg>
+				Clases y Masterclasses
+			</h2>
+			<p data-aos="fade-right" data-aos-delay="100" class="text-gray-500 mb-10 max-w-2xl">Explora nuestro catálogo
+				de sesiones pasadas. Algunas están disponibles de forma gratuita para la comunidad y otras como
+				contenido premium para profundizar a tu ritmo.</p>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<!-- Tumb 1 -->
+				<div data-aos="zoom-in" data-aos-delay="100"
+					class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition flex flex-col bg-white border border-gray-100">
+					<div class="relative w-full h-48 bg-gray-200">
+						<img src="img/laptop-news.png"
+							class="w-full h-full object-cover rounded-t-2xl opacity-90 transition duration-500">
+						<div
+							class="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+							Gratis
+						</div>
+					</div>
+					<div class="p-5 flex flex-col flex-grow">
+						<h4 class="font-bold text-gray-800 leading-snug">Cómo funciona el apego emocional</h4>
+						<p class="text-xs text-gray-400 mt-2 line-clamp-2">Comprende tus patrones de vinculación
+							afectiva desde la infancia y cómo impactan hoy.</p>
+					</div>
+					<div class="px-5 pb-5">
+						<a href="#"
+							class="block text-center w-full bg-cream text-yellow-600 font-semibold py-2 rounded-lg hover:bg-yellow-100 transition">Ver
+							Clase</a>
+					</div>
+				</div>
+
+				<!-- Tumb 2 -->
+				<div data-aos="zoom-in" data-aos-delay="200"
+					class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition flex flex-col bg-white border border-gray-100">
+					<div class="relative w-full h-48 bg-gray-100 text-center flex flex-col items-center justify-center">
+						<span class="text-5xl mb-2">🧠</span>
+						<div
+							class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center">
+							<svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd"
+									d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+									clip-rule="evenodd"></path>
+							</svg>
+							Premium
+						</div>
+					</div>
+					<div class="p-5 flex flex-col flex-grow">
+						<h4 class="font-bold text-gray-800 leading-snug">Vivir sin la aprobación de los demás</h4>
+						<p class="text-xs text-gray-400 mt-2 line-clamp-2">Taller intensivo para soltar la necesidad
+							complacer. Incluye workbook descargable.</p>
+					</div>
+					<div class="px-5 pb-5">
+						<a href="#"
+							class="block text-center w-full bg-yellow-500 text-white font-semibold py-2 rounded-lg hover:bg-yellow-600 transition shadow-sm">Adquirir
+							Nivel</a>
+					</div>
+				</div>
+
+				<!-- Tumb 3 -->
+				<div data-aos="zoom-in" data-aos-delay="300"
+					class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition flex flex-col bg-white border border-gray-100">
+					<div class="relative w-full h-48 bg-yellow-50 flex flex-col items-center justify-center">
+						<span class="text-5xl mb-2">🌱</span>
+						<div
+							class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center">
+							<svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd"
+									d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+									clip-rule="evenodd"></path>
+							</svg>
+							Premium
+						</div>
+					</div>
+					<div class="p-5 flex flex-col flex-grow">
+						<h4 class="font-bold text-gray-800 leading-snug">Reestructuración cognitiva básica</h4>
+						<p class="text-xs text-gray-400 mt-2 line-clamp-2">Aprende a identificar y desarmar pensamientos
+							intrusivos y catastróficos.</p>
+					</div>
+					<div class="px-5 pb-5">
+						<a href="#"
+							class="block text-center w-full bg-yellow-500 text-white font-semibold py-2 rounded-lg hover:bg-yellow-600 transition shadow-sm">Adquirir
+							Nivel</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Suscripción General Newsletter -->
+	<div class="bg-white py-20 border-t border-gray-100 mt-10">
+		<div class="max-w-2xl mx-auto px-6 text-center">
+			<h2 class="text-3xl font-bold text-darken mb-3">Únete a nuestra comunidad</h2>
+			<p class="text-gray-500 mb-8 max-w-md mx-auto">Recibe reflexiones semanales, herramientas prácticas y
+				novedades antes que nadie. Gratis y sin spam directo a tu bandeja.</p>
+
+			<div class="w-full relative">
+				<div class="ml-form-align-center">
+					<div class="ml-form-embedWrapper embedForm">
+						<div class="custom-row-form">
+							<div class="flex flex-col md:flex-row gap-4 justify-center">
+								<div class="w-full md:w-1/3">
+									<input type="text" class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm" name="fields[name]" placeholder="Tu Nombre">
+								</div>
+								<div class="w-full md:w-1/2">
+									<input type="email" class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm" name="fields[email]" placeholder="Tu Correo Electrónico" autocomplete="email" required>
+								</div>
+								<button type="button" onclick="submitMailerlite(this)" class="bg-darken text-white font-bold py-3 px-8 rounded-2xl shadow-lg hover:scale-105 transition-all transform w-full md:w-auto">Unirme</button>
+							</div>
+						</div>
+						<div class="custom-row-success" style="display:none">
+							<div class="flex flex-col items-center justify-center p-4">
+								<div class="h-16 w-16 bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500 shadow-sm">
+									<svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+								</div>
+								<h3 class="text-2xl font-bold text-darken mb-2">¡Listo!</h3>
+								<p class="text-gray-500">¡Te hemos enviado el acceso a tu correo!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="bg-gray-100">
+		<div class="max-w-4xl mx-auto px-8">
+			<div class="flex flex-col items-center py-12 justify-center text-darken px-8">
+				<h1 class="font-bold text-2xl relative z-50 mb-3 text-center" style="color: var(--color-pink-strong);">
+					Angélica Martinez</h1>
+				<span class="text-sm font-medium text-center opacity-80">Psicóloga Clínica & Psicoterapeuta</span>
+			</div>
+			<div class="flex items-center text-darken opacity-80 text-sm justify-center mb-8 flex-wrap gap-4">
+				<a href="index.html" class="px-3 hover:opacity-100 transition">Inicio</a>
+				<a href="webinars.html"
+					class="border-l border-gray-400 px-3 hover:opacity-100 transition font-bold">Webinars</a>
+				<a href="blog.html" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Blog</a>
+			</div>
+				<p class="opacity-80 text-sm">&copy; 2026 Angélica Martinez. Todos los derechos reservados.</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Script envío MailerLite sin redirección -->
+	<script>
+		// ID del formulario activo (se actualiza al abrir cada modal de webinar)
+		let currentFormID = '185471930407585199'; // ID por defecto (Newsletter general)
+
+		// Abre el modal pasando el título y el ID de formulario de MailerLite del webinar
+		function openWebinarModal(title, mailerliteID) {
+			currentFormID = mailerliteID || '185471930407585199';
+			document.getElementById('modal-webinar-title').innerText = title;
+			document.getElementById('webinar-modal').style.display = 'block';
+			document.body.classList.add('overflow-hidden');
+			document.querySelector('.custom-modal-form').style.display = 'block';
+			document.querySelector('.custom-modal-success').style.display = 'none';
+			// Limpiar campos y resetear botón
+			document.getElementById('modal-name').value = '';
+			document.getElementById('modal-email').value = '';
+			const btn = document.querySelector('#webinar-modal button[onclick="submitWebinarModal(this)"]');
+			if (btn) { btn.disabled = false; btn.textContent = 'Inscribirme al Webinar'; }
+		}
+
+		function closeWebinarModal() {
+			document.getElementById('webinar-modal').style.display = 'none';
+			document.body.classList.remove('overflow-hidden');
+		}
+
+		// Submit del modal — usa la URL dinámica con el ID del webinar seleccionado
+		function submitWebinarModal(btn) {
+			const nameVal = document.getElementById('modal-name').value;
+			const emailVal = document.getElementById('modal-email').value;
+
+			if (!emailVal || !emailVal.includes('@')) {
+				document.getElementById('modal-email').focus();
+				alert('Por favor ingresa un correo electrónico válido.');
+				return;
+			}
+
+			const dynamicURL = `https://assets.mailerlite.com/jsonp/2286453/forms/${currentFormID}/subscribe`;
+
+			const fd = new FormData();
+			if (nameVal) fd.append('fields[name]', nameVal);
+			fd.append('fields[email]', emailVal);
+
+			btn.disabled = true;
+			btn.textContent = 'Procesando...';
+
+			fetch(dynamicURL, { method: 'POST', body: fd, mode: 'no-cors' })
+				.then(() => {
+					document.querySelector('.custom-modal-form').style.display = 'none';
+					document.querySelector('.custom-modal-success').style.display = 'block';
+				})
+				.catch(() => {
+					btn.disabled = false;
+					btn.textContent = 'Inscribirme al Webinar';
+				});
+		}
+
+		// Submit del newsletter / formularios de fila
+		function submitMailerlite(btn) {
+			const row = btn.closest('.custom-row-form');
+			const nameInput = row.querySelector('input[name="fields[name]"]');
+			const emailInput = row.querySelector('input[name="fields[email]"]');
+
+			if (!emailInput.value || !emailInput.value.includes('@')) {
+				emailInput.focus();
+				alert('Por favor ingresa un correo electrónico válido.');
+				return;
+			}
+
+			const fd = new FormData();
+			if (nameInput && nameInput.value) fd.append('fields[name]', nameInput.value);
+			fd.append('fields[email]', emailInput.value);
+
+			btn.disabled = true;
+			btn.textContent = 'Enviando...';
+
+			const newsletterURL = `https://assets.mailerlite.com/jsonp/2286453/forms/185471930407585199/subscribe`;
+			fetch(newsletterURL, { method: 'POST', body: fd, mode: 'no-cors' })
+				.then(() => {
+					document.querySelectorAll('.custom-row-form').forEach(e => e.style.display = 'none');
+					document.querySelectorAll('.custom-row-success').forEach(e => e.style.display = 'block');
+				})
+				.catch(() => {
+					btn.disabled = false;
+					btn.textContent = 'Unirme';
+				});
+		}
+	</script>
+
+	<!-- AOS init -->
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init({ once: true });
+	</script>
+</body>
+</html>
