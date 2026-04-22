@@ -57,10 +57,10 @@
 					href="about.html">Sobre Mí</a>
 				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
 					href="blog.html">Blog</a>
-				<a class="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4"
-					href="#">Iniciar Sesión</a>
+				<!-- <a class="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4"
+					href="#">Iniciar Sesión</a> -->
 				<a class="px-10 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4"
-					href="#">Registrarse</a>
+					href="#">Unirme a la comunidad</a>
 			</nav>
 		</div>
 	</div>
@@ -117,7 +117,9 @@
 						herramientas inmediatas de neuro-regulación para volver a tu centro.</p>
 				</div>
 				<div class="px-8 pb-8 mt-auto">
-					<button onclick="openWebinarModal('Cómo identificar y transitar tus crisis de ansiedad sin miedo', '185483906367095970')" class="w-full text-white font-bold py-3 px-4 rounded-full shadow-lg transform transition-all hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
+					<button
+						onclick="openWebinarModal('Cómo identificar y transitar tus crisis de ansiedad sin miedo', '185483906367095970')"
+						class="w-full text-white font-bold py-3 px-4 rounded-full shadow-lg transform transition-all hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
 						Reservar mi lugar
 					</button>
 				</div>
@@ -144,7 +146,9 @@
 						un plan de rutinas minimalistas y compasión propia para reactivarte.</p>
 				</div>
 				<div class="px-8 pb-8 mt-auto">
-					<button onclick="openWebinarModal('Pequeños pasos para salir de los episodios depresivos', '185483949069304878')" class="w-full text-white font-bold py-3 px-4 rounded-full shadow-lg transform transition-all hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
+					<button
+						onclick="openWebinarModal('Pequeños pasos para salir de los episodios depresivos', '185483949069304878')"
+						class="w-full text-white font-bold py-3 px-4 rounded-full shadow-lg transform transition-all hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
 						Reservar mi lugar
 					</button>
 				</div>
@@ -171,7 +175,9 @@
 						emociones de los más pequeños y conectar antes de corregir.</p>
 				</div>
 				<div class="px-8 pb-8 mt-auto">
-					<button onclick="openWebinarModal('Cómo ser un refugio seguro para tus hijos sin perder la paciencia', '185483983489861443')" class="w-full text-white font-bold py-3 px-4 rounded-full shadow-lg transform transition-all hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
+					<button
+						onclick="openWebinarModal('Cómo ser un refugio seguro para tus hijos sin perder la paciencia', '185483983489861443')"
+						class="w-full text-white font-bold py-3 px-4 rounded-full shadow-lg transform transition-all hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
 						Reservar mi lugar
 					</button>
 				</div>
@@ -180,51 +186,77 @@
 	</div>
 
 	<!-- Modal Custom 100% Tailwind conectado a MailerLite -->
-	<div id="webinar-modal" class="fixed inset-0 z-50 overflow-y-auto" style="display: none;" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+	<div id="webinar-modal" class="fixed inset-0 z-50 overflow-y-auto" style="display: none;"
+		aria-labelledby="modal-title" role="dialog" aria-modal="true">
 		<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 			<!-- Background overlay -->
-			<div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity cursor-pointer" onclick="closeWebinarModal()" aria-hidden="true"></div>
+			<div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity cursor-pointer"
+				onclick="closeWebinarModal()" aria-hidden="true"></div>
 
 			<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-			
+
 			<!-- Modal panel -->
-			<div class="inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full relative z-10">
-				
+			<div
+				class="inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full relative z-10">
+
 				<div class="custom-modal-form bg-white">
 					<!-- Cerrar X -->
-					<button onclick="closeWebinarModal()" class="absolute top-4 right-4 bg-gray-100 rounded-full p-2 text-gray-500 hover:text-gray-800 transition z-50 focus:outline-none">
-						<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+					<button onclick="closeWebinarModal()"
+						class="absolute top-4 right-4 bg-gray-100 rounded-full p-2 text-gray-500 hover:text-gray-800 transition z-50 focus:outline-none">
+						<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M6 18L18 6M6 6l12 12" />
+						</svg>
 					</button>
 
 					<div class="p-8">
 						<div class="text-center mb-6">
 							<div class="inline-block p-4 rounded-full mb-4 bg-pink-50">
-								<svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+								<svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor"
+									viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+										d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+									</path>
+								</svg>
 							</div>
-							<h3 class="text-2xl leading-6 font-bold text-gray-900" id="modal-title">Asegura tu lugar</h3>
+							<h3 class="text-2xl leading-6 font-bold text-gray-900" id="modal-title">Asegura tu lugar
+							</h3>
 							<p class="mt-2 text-sm text-gray-500 mb-2">Estás a punto de inscribirte al webinar:</p>
 							<p id="modal-webinar-title" class="text-md font-semibold text-pink-500 italic px-2">...</p>
 						</div>
-						
+
 						<div class="space-y-4">
 							<div>
 								<label class="block text-sm font-medium text-gray-700 mb-1">Nombre (o apodo)</label>
-								<input id="modal-name" type="text" class="block w-full border-gray-300 rounded-2xl bg-gray-50 px-4 py-3 focus:ring-pink-300 focus:border-pink-300 sm:text-sm shadow-inner outline-none transition border border-gray-100" placeholder="Angélica">
+								<input id="modal-name" type="text"
+									class="block w-full border-gray-300 rounded-2xl bg-gray-50 px-4 py-3 focus:ring-pink-300 focus:border-pink-300 sm:text-sm shadow-inner outline-none transition border border-gray-100"
+									placeholder="Angélica">
 							</div>
 							<div>
 								<label class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
-								<input id="modal-email" type="email" class="block w-full border-gray-300 rounded-2xl bg-gray-50 px-4 py-3 focus:ring-pink-300 focus:border-pink-300 sm:text-sm shadow-inner outline-none transition border border-gray-100" placeholder="tu@correo.com">
+								<input id="modal-email" type="email"
+									class="block w-full border-gray-300 rounded-2xl bg-gray-50 px-4 py-3 focus:ring-pink-300 focus:border-pink-300 sm:text-sm shadow-inner outline-none transition border border-gray-100"
+									placeholder="tu@correo.com">
 							</div>
 							<div class="pt-4">
-								<button type="button" onclick="submitWebinarModal(this)" class="w-full flex justify-center py-4 border border-transparent rounded-full shadow-lg text-lg font-bold text-white focus:outline-none transform transition hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
+								<button type="button" onclick="submitWebinarModal(this)"
+									class="w-full flex justify-center py-4 border border-transparent rounded-full shadow-lg text-lg font-bold text-white focus:outline-none transform transition hover:scale-105 bg-gradient-to-r from-pink-400 to-yellow-300">
 									Inscribirme al Webinar
 								</button>
-								<p class="text-[10px] text-center text-gray-400 mt-3 flex flex-col items-center justify-center">
+								<p
+									class="text-[10px] text-center text-gray-400 mt-3 flex flex-col items-center justify-center">
 									<span class="flex items-center mb-1">
-										<svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+										<svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+											</path>
+										</svg>
 										Tus datos están protegidos y nunca enviaremos spam.
 									</span>
-									<span>Al inscribirte, aceptas nuestros <a href="terminos.html" class="underline hover:text-gray-600 transition">Términos</a> y <a href="politicas.html" class="underline hover:text-gray-600 transition">Políticas</a>.</span>
+									<span>Al inscribirte, aceptas nuestros <a href="terminos.html"
+											class="underline hover:text-gray-600 transition">Términos</a> y <a
+											href="politicas.html"
+											class="underline hover:text-gray-600 transition">Políticas</a>.</span>
 								</p>
 							</div>
 						</div>
@@ -233,15 +265,23 @@
 
 				<!-- Vista de Éxito Tailwind -->
 				<div class="custom-modal-success p-10 text-center relative" style="display: none;">
-					<div class="absolute inset-0 w-full h-full pointer-events-none flex justify-center items-center overflow-hidden z-10">
-						<span class="animate-ping absolute inline-flex h-24 w-24 rounded-full bg-yellow-400 opacity-20"></span>
+					<div
+						class="absolute inset-0 w-full h-full pointer-events-none flex justify-center items-center overflow-hidden z-10">
+						<span
+							class="animate-ping absolute inline-flex h-24 w-24 rounded-full bg-yellow-400 opacity-20"></span>
 					</div>
-					<div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 relative z-20 mb-6 transition-all transform scale-110">
-						<svg class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+					<div
+						class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 relative z-20 mb-6 transition-all transform scale-110">
+						<svg class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+						</svg>
 					</div>
-					<h3 class="text-3xl font-bold text-gray-900 mb-2 relative z-20 text-pink-500">¡Inscripción Exitosa!</h3>
-					<p class="text-gray-600 text-lg relative z-20 mb-6">Revisa tu correo, te enviamos el enlace de acceso y todos los detalles para conectarte.</p>
-					<button onclick="closeWebinarModal()" class="relative z-20 w-full flex justify-center py-3 border border-gray-200 rounded-full text-md font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none transition">
+					<h3 class="text-3xl font-bold text-gray-900 mb-2 relative z-20 text-pink-500">¡Inscripción Exitosa!
+					</h3>
+					<p class="text-gray-600 text-lg relative z-20 mb-6">Revisa tu correo, te enviamos el enlace de
+						acceso y todos los detalles para conectarte.</p>
+					<button onclick="closeWebinarModal()"
+						class="relative z-20 w-full flex justify-center py-3 border border-gray-200 rounded-full text-md font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none transition">
 						Cerrar ventana
 					</button>
 				</div>
@@ -358,18 +398,28 @@
 						<div class="custom-row-form">
 							<div class="flex flex-col md:flex-row gap-4 justify-center">
 								<div class="w-full md:w-1/3">
-									<input type="text" class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm" name="fields[name]" placeholder="Tu Nombre">
+									<input type="text"
+										class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm"
+										name="fields[name]" placeholder="Tu Nombre">
 								</div>
 								<div class="w-full md:w-1/2">
-									<input type="email" class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm" name="fields[email]" placeholder="Tu Correo Electrónico" autocomplete="email" required>
+									<input type="email"
+										class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm"
+										name="fields[email]" placeholder="Tu Correo Electrónico" autocomplete="email"
+										required>
 								</div>
-								<button type="button" onclick="submitMailerlite(this)" class="bg-gradient-to-r from-pink-400 to-yellow-300 text-white font-bold py-3 px-8 rounded-2xl shadow-lg hover:scale-105 transition-all transform w-full md:w-auto">Unirme</button>
+								<button type="button" onclick="submitMailerlite(this)"
+									class="bg-gradient-to-r from-pink-400 to-yellow-300 text-white font-bold py-3 px-8 rounded-2xl shadow-lg hover:scale-105 transition-all transform w-full md:w-auto">Unirme</button>
 							</div>
 						</div>
 						<div class="custom-row-success" style="display:none">
 							<div class="flex flex-col items-center justify-center p-4">
-								<div class="h-16 w-16 bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500 shadow-sm">
-									<svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+								<div
+									class="h-16 w-16 bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500 shadow-sm">
+									<svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											d="M5 13l4 4L19 7" />
+									</svg>
 								</div>
 								<h3 class="text-2xl font-bold text-darken mb-2">¡Listo!</h3>
 								<p class="text-gray-500">¡Te hemos enviado el acceso a tu correo!</p>
@@ -382,19 +432,20 @@
 	</div>
 
 	<!-- Footer -->
-	<footer class="bg-gray-100">
-		<div class="max-w-4xl mx-auto px-8">
+	<footer class="mt-16" style="background-color: var(--color-bg-light);">
+		<div class="max-w-lg mx-auto">
 			<div class="flex flex-col items-center py-12 justify-center text-darken px-8">
 				<h1 class="font-bold text-2xl relative z-50 mb-3 text-center" style="color: var(--color-pink-strong);">
 					Angélica Martinez</h1>
 				<span class="text-sm font-medium text-center opacity-80">Psicóloga Clínica & Psicoterapeuta</span>
 			</div>
-			<div class="flex items-center text-darken opacity-80 text-sm justify-center mb-8 flex-wrap gap-4">
-				<a href="index.html" class="px-3 hover:opacity-100 transition">Inicio</a>
-				<a href="webinars.html" class="border-l border-gray-400 px-3 hover:opacity-100 transition font-bold">Webinars</a>
+			<div class="flex items-center text-darken opacity-80 text-sm justify-center mb-8">
+				<a href="webinars.html" class="px-3 hover:opacity-100 transition">Webinars</a>
 				<a href="terminos.html" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Términos</a>
-				<a href="politicas.html" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Políticas de Privacidad</a>
+				<a href="politicas.html" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Políticas de
+					Privacidad</a>
 			</div>
+			<div class="text-center text-darken border-t border-gray-300 py-6">
 				<p class="opacity-80 text-sm">&copy; 2026 Angélica Martinez. Todos los derechos reservados.</p>
 			</div>
 		</div>
@@ -494,4 +545,5 @@
 		AOS.init({ once: true });
 	</script>
 </body>
+
 </html>

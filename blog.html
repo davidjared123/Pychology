@@ -22,9 +22,9 @@
 
 </head>
 
-<body class="antialiased bg-gray-50">
+<body class="antialiased bg-cream">
 	<!-- navbar -->
-	<div x-data="{ open: false }" class="w-full text-gray-700 bg-white shadow-sm">
+	<div x-data="{ open: false }" class="w-full text-gray-700 bg-cream">
 		<div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
 			<div class="flex flex-row items-center justify-between py-6">
 				<div class="relative md:mt-8">
@@ -34,7 +34,7 @@
 						xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z"
-							fill="#FBCFE8" />
+							fill="#FBCCCC" />
 					</svg>
 				</div>
 				<button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
@@ -58,10 +58,10 @@
 					href="about.html">Sobre Mí</a>
 				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 font-bold focus:outline-none focus:shadow-outline"
 					href="blog.html" style="color: var(--color-pink-strong);">Blog</a>
-				<a class="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 border rounded-full md:mt-8 md:ml-4"
-					href="#">Iniciar Sesión</a>
+				<!-- <a class="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 border rounded-full md:mt-8 md:ml-4"
+					href="#">Iniciar Sesión</a> -->
 				<a class="px-10 py-3 mt-2 text-sm text-center bg-yellow-500 text-white rounded-full md:mt-8 md:ml-4"
-					href="#">Registrarse</a>
+					href="#">Unirme a la comunidad</a>
 			</nav>
 		</div>
 	</div>
@@ -169,26 +169,37 @@
 	<div class="bg-white py-20 border-t border-gray-100 mt-10">
 		<div class="max-w-2xl mx-auto px-6 text-center">
 			<h2 class="text-3xl font-bold text-darken mb-3">Únete a nuestra comunidad</h2>
-			<p class="text-gray-500 mb-8 max-w-md mx-auto">Recibe reflexiones semanales, herramientas prácticas y novedades antes que nadie. Gratis y sin spam directo a tu bandeja.</p>
-			
+			<p class="text-gray-500 mb-8 max-w-md mx-auto">Recibe reflexiones semanales, herramientas prácticas y
+				novedades antes que nadie. Gratis y sin spam directo a tu bandeja.</p>
+
 			<div class="w-full relative">
 				<div class="ml-form-align-center">
 					<div class="ml-form-embedWrapper embedForm">
 						<div class="custom-row-form">
 							<div class="flex flex-col md:flex-row gap-4 justify-center">
 								<div class="w-full md:w-1/3">
-									<input type="text" class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm" name="fields[name]" placeholder="Tu Nombre">
+									<input type="text"
+										class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm"
+										name="fields[name]" placeholder="Tu Nombre">
 								</div>
 								<div class="w-full md:w-1/2">
-									<input type="email" class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm" name="fields[email]" placeholder="Tu Correo Electrónico" autocomplete="email" required>
+									<input type="email"
+										class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-pink-300 focus:ring-2 focus:ring-pink-200 outline-none transition rounded-2xl px-5 py-3 text-gray-700 shadow-sm"
+										name="fields[email]" placeholder="Tu Correo Electrónico" autocomplete="email"
+										required>
 								</div>
-								<button type="button" onclick="submitMailerlite(this)" class="bg-gradient-to-r from-pink-400 to-yellow-300 text-white font-bold py-3 px-8 rounded-2xl shadow-lg hover:scale-105 transition-all transform w-full md:w-auto">Unirme</button>
+								<button type="button" onclick="submitMailerlite(this)"
+									class="bg-gradient-to-r from-pink-400 to-yellow-300 text-white font-bold py-3 px-8 rounded-2xl shadow-lg hover:scale-105 transition-all transform w-full md:w-auto">Unirme</button>
 							</div>
 						</div>
 						<div class="custom-row-success" style="display:none">
 							<div class="flex flex-col items-center justify-center p-4">
-								<div class="h-16 w-16 bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500 shadow-sm">
-									<svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+								<div
+									class="h-16 w-16 bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500 shadow-sm">
+									<svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											d="M5 13l4 4L19 7" />
+									</svg>
 								</div>
 								<h3 class="text-2xl font-bold text-darken mb-2">¡Listo!</h3>
 								<p class="text-gray-500">¡Te hemos enviado el acceso a tu correo!</p>
@@ -211,7 +222,8 @@
 				<a href="index.html" class="px-3 hover:opacity-100 transition">Inicio</a>
 				<a href="webinars.html" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Webinars</a>
 				<a href="terminos.html" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Términos</a>
-				<a href="politicas.html" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Políticas de Privacidad</a>
+				<a href="politicas.html" class="border-l border-gray-400 px-3 hover:opacity-100 transition">Políticas de
+					Privacidad</a>
 			</div>
 			<div class="text-center text-darken border-t border-gray-300 py-6">
 				<p class="opacity-80 text-sm">&copy; 2026 Angélica Martinez. Todos los derechos reservados.</p>
@@ -225,8 +237,8 @@
 			const container = btn.closest('.custom-row-form') || btn.closest('.custom-modal-form');
 			const nameInput = container.querySelector('input[name="fields[name]"]');
 			const emailInput = container.querySelector('input[name="fields[email]"]');
-			
-			if(!emailInput.value || !emailInput.value.includes('@')) {
+
+			if (!emailInput.value || !emailInput.value.includes('@')) {
 				emailInput.focus();
 				alert('Por favor ingresa un correo electrónico válido.');
 				return;
